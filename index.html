@@ -3,39 +3,68 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chúc mừng 20/10 🌹</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gửi Tea My 💖</title>
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;min-height:100vh;overflow:hidden;
+ margin:0;min-height:100vh;overflow-x:hidden;
  display:flex;align-items:center;justify-content:center;
  text-align:center;color:white;font-family:Arial,sans-serif;
- background:radial-gradient(circle,#ffb8d8,#ed579a,#54204f);
+ background:radial-gradient(circle,#ffc5df,#ed579a,#54204f);
 }
-main{padding:22px;max-width:500px;z-index:2}
+main{padding:24px 18px;max-width:500px;z-index:2}
 h1{line-height:1.5;text-shadow:0 0 18px #fff}
+.name{font-size:38px;color:#fff4ad;
+ text-shadow:0 0 20px #ff3f9c}
 .bouquet{font-size:100px;animation:sway 2s infinite alternate}
 p{line-height:1.9;font-size:17px}
-button{border:0;border-radius:30px;padding:15px 22px;
- background:#ff3988;color:white;font-size:16px}
+.card{
+ padding:20px;border:1px solid #ffffff80;
+ border-radius:22px;background:#ffffff20;
+ box-shadow:0 0 30px #ffb3dc55
+}
+button{
+ border:0;border-radius:30px;padding:15px 22px;
+ background:#ff3988;color:white;font-size:16px;
+ margin-top:20px
+}
 .flower{position:fixed;top:-40px;animation:fall linear forwards;
  pointer-events:none}
-@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
-@keyframes sway{to{transform:rotate(10deg) scale(1.1)}}
+@keyframes fall{
+ to{transform:translateY(110vh) rotate(720deg)}
+}
+@keyframes sway{
+ to{transform:rotate(10deg) scale(1.1)}
+}
 </style>
 </head>
 <body>
 <main>
-<h1>🌸 Chúc mừng ngày<br>Phụ nữ Việt Nam 20/10 🌸</h1>
+<h1>🌸 Chúc mừng ngày<br>
+Phụ nữ Việt Nam 20/10 🌸</h1>
+
+<div class="name">Tea My 💗</div>
 <div class="bouquet">💐</div>
+
+<div class="card">
 <p>
-Chúc bạn luôn xinh đẹp, hạnh phúc và rạng rỡ như những đóa hoa! 🌹<br>
-Mong mọi điều tốt đẹp nhất sẽ đến với bạn.<br>
-<strong>Chúc bạn một ngày 20/10 ngập tràn yêu thương! 💖</strong>
+Gửi Tea My thân yêu! 🌷<br>
+Chúc Tea My luôn xinh đẹp, vui vẻ
+và hạnh phúc mỗi ngày.<br>
+Mong nụ cười luôn nở trên môi,
+mọi điều may mắn sẽ đến
+và những ước mơ đều thành hiện thực. 🌹
 </p>
+<strong>Chúc Tea My một ngày 20/10
+ngập tràn yêu thương! 💖</strong>
+<p>🌸 You deserve all the happiness 🌸</p>
+</div>
+
 <button onclick="rain(100)">💗 Nhận ngàn hoa 💗</button>
+<p>💕 Dành riêng cho Tea My 💕</p>
 </main>
+
 <script>
 function rain(n){
  for(let i=0;i<n;i++){
