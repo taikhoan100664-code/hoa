@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chúc mừng 20/10 🌹</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;overflow:hidden;
+ display:flex;align-items:center;justify-content:center;
+ text-align:center;color:white;font-family:Arial,sans-serif;
+ background:radial-gradient(circle,#ffb8d8,#ed579a,#54204f);
+}
+main{padding:22px;max-width:500px;z-index:2}
+h1{line-height:1.5;text-shadow:0 0 18px #fff}
+.bouquet{font-size:100px;animation:sway 2s infinite alternate}
+p{line-height:1.9;font-size:17px}
+button{border:0;border-radius:30px;padding:15px 22px;
+ background:#ff3988;color:white;font-size:16px}
+.flower{position:fixed;top:-40px;animation:fall linear forwards;
+ pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+@keyframes sway{to{transform:rotate(10deg) scale(1.1)}}
+</style>
+</head>
+<body>
+<main>
+<h1>🌸 Chúc mừng ngày<br>Phụ nữ Việt Nam 20/10 🌸</h1>
+<div class="bouquet">💐</div>
+<p>
+Chúc bạn luôn xinh đẹp, hạnh phúc và rạng rỡ như những đóa hoa! 🌹<br>
+Mong mọi điều tốt đẹp nhất sẽ đến với bạn.<br>
+<strong>Chúc bạn một ngày 20/10 ngập tràn yêu thương! 💖</strong>
+</p>
+<button onclick="rain(100)">💗 Nhận ngàn hoa 💗</button>
+</main>
+<script>
+function rain(n){
+ for(let i=0;i<n;i++){
+  setTimeout(()=>{
+   let f=document.createElement('div');
+   f.className='flower';
+   f.textContent=['🌸','🌹','🌷','💖','🌺','✨'][Math.random()*6|0];
+   f.style.left=Math.random()*100+'vw';
+   f.style.fontSize=(18+Math.random()*24)+'px';
+   f.style.animationDuration=(3+Math.random()*5)+'s';
+   document.body.appendChild(f);
+   setTimeout(()=>f.remove(),8500);
+  },i*35);
+ }
+}
+setInterval(()=>rain(2),800);
+rain(30);
+</script>
+</body>
+</html>
