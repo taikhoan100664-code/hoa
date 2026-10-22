@@ -1,87 +1,103 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gửi Tea My 💖</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#760b13">
+<title>Tử Vi Phương Đông</title>
 <style>
 *{box-sizing:border-box}
-body{
- margin:0;min-height:100vh;overflow-x:hidden;
- display:flex;align-items:center;justify-content:center;
- text-align:center;color:white;font-family:Arial,sans-serif;
- background:radial-gradient(circle,#ffc5df,#ed579a,#54204f);
-}
-main{padding:24px 18px;max-width:500px;z-index:2}
-h1{line-height:1.5;text-shadow:0 0 18px #fff}
-.name{font-size:38px;color:#fff4ad;
- text-shadow:0 0 20px #ff3f9c}
-.bouquet{font-size:100px;animation:sway 2s infinite alternate}
-p{line-height:1.9;font-size:17px}
-.card{
- padding:20px;border:1px solid #ffffff80;
- border-radius:22px;background:#ffffff20;
- box-shadow:0 0 30px #ffb3dc55
-}
-button{
- border:0;border-radius:30px;padding:15px 22px;
- background:#ff3988;color:white;font-size:16px;
- margin-top:20px
-}
-.flower{position:fixed;top:-40px;animation:fall linear forwards;
- pointer-events:none}
-@keyframes fall{
- to{transform:translateY(110vh) rotate(720deg)}
-}
-@keyframes sway{
- to{transform:rotate(10deg) scale(1.1)}
-}
+body{margin:0;padding:16px 12px;background:linear-gradient(150deg,#390509,#850e18,#350407);font-family:Arial,sans-serif;color:#fff4d0;min-height:100vh}
+main{max-width:620px;margin:auto}
+header{text-align:center;padding:20px 8px}
+header .symbol{font-size:48px}
+h1{color:#ffd779;font-size:29px}
+header p{line-height:1.6}
+.card{background:#fff8e8;color:#542018;border-radius:16px;padding:18px;margin-bottom:16px;box-shadow:0 8px 24px #17000055}
+h2{color:#8b1319;font-size:20px;margin-top:0}
+label{display:block;font-weight:bold;margin:14px 0 7px}
+input,select{width:100%;padding:13px;border:1px solid #d8b878;border-radius:9px;background:white;font-size:16px}
+button{width:100%;padding:15px;margin-top:16px;border:0;border-radius:10px;background:linear-gradient(90deg,#d99b35,#ffe3a0);color:#5d1010;font-size:16px;font-weight:bold}
+.hero{text-align:center;background:#7e111a;color:#ffe4a0;border-radius:14px;padding:20px}
+.animal{font-size:48px}.hero h2{color:#ffdc80;font-size:25px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.item{background:#fff0cd;padding:13px;border-radius:10px;overflow-wrap:anywhere}
+.item small{display:block;color:#875c42;margin-bottom:7px}
+.item strong{color:#7c131a}
+.section{border-bottom:1px solid #ead8b4;padding:12px 0;line-height:1.7}
+.section:last-child{border:0}
+.notice,footer{text-align:center;font-size:12px;line-height:1.6;color:#f1d6b2;padding:12px}
+@media(max-width:360px){h1{font-size:24px}.card{padding:14px}}
+@media print{body{background:white;color:black}.notice,footer,form button{display:none}.card{box-shadow:none}}
 </style>
 </head>
 <body>
 <main>
-<h1>🌸 Chúc mừng ngày<br>
-Phụ nữ Việt Nam 20/10 🌸</h1>
-
-<div class="name">Tea My 💗</div>
-<div class="bouquet">💐</div>
-
+<header><div class="symbol">☯️</div><h1>TỬ VI PHƯƠNG ĐÔNG</h1><p>Khám phá bản mệnh · Tình duyên · Công danh · Tài lộc</p></header>
 <div class="card">
-<p>
-Gửi Tea My thân yêu! 🌷<br>
-Chúc Tea My luôn xinh đẹp, vui vẻ
-và hạnh phúc mỗi ngày.<br>
-Mong nụ cười luôn nở trên môi,
-mọi điều may mắn sẽ đến
-và những ước mơ đều thành hiện thực. 🌹
-</p>
-<strong>Chúc Tea My một ngày 20/10
-ngập tràn yêu thương! 💖</strong>
-<p>🌸 You deserve all the happiness 🌸</p>
+<h2>🔮 Nhập ngày tháng năm sinh</h2>
+<form id="form">
+<label for="birth">Ngày sinh</label>
+<input id="birth" type="date" required min="1900-01-01" max="2026-12-31">
+<label for="calendar">Loại ngày sinh</label>
+<select id="calendar"><option value="solar">Dương lịch</option><option value="lunar">Âm lịch</option></select>
+<label for="gender">Giới tính</label>
+<select id="gender"><option value="male">Nam</option><option value="female">Nữ</option><option value="other">Không muốn cung cấp</option></select>
+<button type="submit">✨ XEM TỬ VI CỦA TÔI</button>
+</form>
 </div>
-
-<button onclick="rain(100)">💗 Nhận ngàn hoa 💗</button>
-<p>💕 Dành riêng cho Tea My 💕</p>
+<div id="result" hidden>
+<div class="card"><div class="hero"><div class="animal" id="animal"></div><h2 id="headline"></h2><p id="subhead"></p></div>
+<div class="grid">
+<div class="item"><small>Năm nhập</small><strong id="year"></strong></div>
+<div class="item"><small>Con giáp</small><strong id="zodiac"></strong></div>
+<div class="item"><small>Mệnh ngũ hành</small><strong id="element"></strong></div>
+<div class="item"><small>Can chi năm</small><strong id="canchi"></strong></div>
+</div></div>
+<div class="card"><h2>🌟 Luận giải tham khảo</h2><div id="reading"></div></div>
+<button type="button" id="print">🖨️ In / lưu PDF</button>
+</div>
+<div class="notice">Tử vi chỉ mang tính tham khảo, giải trí, không phải dự đoán khoa học.</div>
+<footer>© Tử Vi Phương Đông</footer>
 </main>
-
 <script>
-function rain(n){
- for(let i=0;i<n;i++){
-  setTimeout(()=>{
-   let f=document.createElement('div');
-   f.className='flower';
-   f.textContent=['🌸','🌹','🌷','💖','🌺','✨'][Math.random()*6|0];
-   f.style.left=Math.random()*100+'vw';
-   f.style.fontSize=(18+Math.random()*24)+'px';
-   f.style.animationDuration=(3+Math.random()*5)+'s';
-   document.body.appendChild(f);
-   setTimeout(()=>f.remove(),8500);
-  },i*35);
- }
-}
-setInterval(()=>rain(2),800);
-rain(30);
+const animals=["Thân","Dậu","Tuất","Hợi","Tý","Sửu","Dần","Mão","Thìn","Tỵ","Ngọ","Mùi"];
+const names=["Khỉ","Gà","Chó","Lợn","Chuột","Trâu","Hổ","Mèo","Rồng","Rắn","Ngựa","Dê"];
+const icons=["🐒","🐓","🐕","🐖","🐀","🐂","🐅","🐈","🐉","🐍","🐎","🐐"];
+const stems=["Giáp","Ất","Bính","Đinh","Mậu","Kỷ","Canh","Tân","Nhâm","Quý"];
+const branches=["Tý","Sửu","Dần","Mão","Thìn","Tỵ","Ngọ","Mùi","Thân","Dậu","Tuất","Hợi"];
+const napAm=[
+["Hải Trung Kim","Kim"],["Lư Trung Hỏa","Hỏa"],["Đại Lâm Mộc","Mộc"],["Lộ Bàng Thổ","Thổ"],["Kiếm Phong Kim","Kim"],["Sơn Đầu Hỏa","Hỏa"],["Giản Hạ Thủy","Thủy"],["Thành Đầu Thổ","Thổ"],["Bạch Lạp Kim","Kim"],["Dương Liễu Mộc","Mộc"],["Tuyền Trung Thủy","Thủy"],["Ốc Thượng Thổ","Thổ"],["Tích Lịch Hỏa","Hỏa"],["Tùng Bách Mộc","Mộc"],["Trường Lưu Thủy","Thủy"],["Sa Trung Kim","Kim"],["Sơn Hạ Hỏa","Hỏa"],["Bình Địa Mộc","Mộc"],["Bích Thượng Thổ","Thổ"],["Kim Bạch Kim","Kim"],["Phú Đăng Hỏa","Hỏa"],["Thiên Hà Thủy","Thủy"],["Đại Dịch Thổ","Thổ"],["Thoa Xuyến Kim","Kim"],["Tang Đố Mộc","Mộc"],["Đại Khê Thủy","Thủy"],["Sa Trung Thổ","Thổ"],["Thiên Thượng Hỏa","Hỏa"],["Thạch Lựu Mộc","Mộc"],["Đại Hải Thủy","Thủy"]
+];
+function canchi(y){return stems[((y-4)%10+10)%10]+" "+branches[((y-4)%12+12)%12]}
+function getElement(y){return napAm[Math.floor((((y-1984)%60+60)%60)/2)]}
+document.getElementById("form").addEventListener("submit",function(e){
+e.preventDefault();
+const raw=document.getElementById("birth").value;
+if(!raw)return;
+const [y,mm,dd]=raw.split("-").map(Number);
+const lunar=document.getElementById("calendar").value==="lunar";
+const yi=((y%12)+12)%12;
+const elem=getElement(y);
+document.getElementById("animal").textContent=icons[yi];
+document.getElementById("headline").textContent="Tuổi "+names[yi];
+document.getElementById("subhead").textContent="Ngày nhập: "+dd+"/"+mm+"/"+y+(lunar?" (ngày âm lịch)":" (dương lịch)");
+document.getElementById("year").textContent=y;
+document.getElementById("zodiac").textContent=names[yi];
+document.getElementById("element").textContent=elem[0];
+document.getElementById("canchi").textContent=canchi(y);
+const readings=[
+["Tính cách","Hãy phát huy điểm mạnh, chủ động học hỏi và cân bằng sự tự tin với khả năng lắng nghe."],
+["Công danh","Kiên trì nâng cao kỹ năng, giữ chữ tín và lập kế hoạch rõ ràng sẽ giúp xây dựng sự nghiệp bền vững."],
+["Tài lộc","Theo dõi thu chi, tích lũy đều đặn và tìm hiểu kỹ trước các quyết định tài chính."],
+["Tình duyên","Giao tiếp chân thành, tôn trọng nhau và cùng giải quyết bất đồng là nền tảng của mối quan hệ tốt đẹp."],
+["Vận trình 2026","Nên rà soát mục tiêu, chăm sóc sức khỏe và chủ động nắm bắt cơ hội. Đây là lời khuyên tổng quát, không phải dự đoán vận hạn cá nhân."]
+];
+document.getElementById("reading").replaceChildren(...readings.map(([title,body])=>{const div=document.createElement("div");div.className="section";const strong=document.createElement("strong");strong.textContent=title;div.append(strong,document.createElement("br"),document.createTextNode(body));return div}));
+document.getElementById("result").hidden=false;
+document.getElementById("result").scrollIntoView({behavior:"smooth"});
+});
+document.getElementById("print").addEventListener("click",()=>window.print());
 </script>
 </body>
 </html>
