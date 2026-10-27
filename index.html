@@ -1,103 +1,192 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#760b13">
-<title>Tử Vi Phương Đông</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoa Hồng Nở Rộ 🌹</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;padding:16px 12px;background:linear-gradient(150deg,#390509,#850e18,#350407);font-family:Arial,sans-serif;color:#fff4d0;min-height:100vh}
-main{max-width:620px;margin:auto}
-header{text-align:center;padding:20px 8px}
-header .symbol{font-size:48px}
-h1{color:#ffd779;font-size:29px}
-header p{line-height:1.6}
-.card{background:#fff8e8;color:#542018;border-radius:16px;padding:18px;margin-bottom:16px;box-shadow:0 8px 24px #17000055}
-h2{color:#8b1319;font-size:20px;margin-top:0}
-label{display:block;font-weight:bold;margin:14px 0 7px}
-input,select{width:100%;padding:13px;border:1px solid #d8b878;border-radius:9px;background:white;font-size:16px}
-button{width:100%;padding:15px;margin-top:16px;border:0;border-radius:10px;background:linear-gradient(90deg,#d99b35,#ffe3a0);color:#5d1010;font-size:16px;font-weight:bold}
-.hero{text-align:center;background:#7e111a;color:#ffe4a0;border-radius:14px;padding:20px}
-.animal{font-size:48px}.hero h2{color:#ffdc80;font-size:25px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.item{background:#fff0cd;padding:13px;border-radius:10px;overflow-wrap:anywhere}
-.item small{display:block;color:#875c42;margin-bottom:7px}
-.item strong{color:#7c131a}
-.section{border-bottom:1px solid #ead8b4;padding:12px 0;line-height:1.7}
-.section:last-child{border:0}
-.notice,footer{text-align:center;font-size:12px;line-height:1.6;color:#f1d6b2;padding:12px}
-@media(max-width:360px){h1{font-size:24px}.card{padding:14px}}
-@media print{body{background:white;color:black}.notice,footer,form button{display:none}.card{box-shadow:none}}
+body{
+  margin:0;min-height:100vh;overflow:hidden;
+  background:radial-gradient(ellipse at center,#35102c 0%,#100817 65%,#05030b 100%);
+  color:#fff;font-family:Arial,sans-serif;
+  display:flex;align-items:center;justify-content:center;
+}
+.scene{text-align:center;width:100%;padding:15px;position:relative;z-index:2}
+h1{
+  font-size:clamp(26px,7vw,42px);color:#ff9cce;
+  text-shadow:0 0 15px #ff237f,0 0 35px #f06;
+  animation:glow 2s infinite alternate;
+}
+p{color:#ffd6e9;font-size:15px}
+.flower{
+  position:relative;width:240px;height:300px;
+  margin:10px auto 0;
+}
+.stem{
+  position:absolute;width:7px;height:170px;
+  background:linear-gradient(90deg,#164b29,#6ad66b,#174324);
+  left:117px;top:112px;border-radius:100%;
+  transform:rotate(5deg);transform-origin:top;
+}
+.leaf{
+  position:absolute;width:65px;height:28px;
+  background:linear-gradient(135deg,#8ae66a,#167331);
+  border-radius:100% 0 100% 0;
+  box-shadow:0 0 12px #2b9d4c;
+}
+.leaf.left{top:205px;left:55px;transform:rotate(12deg)}
+.leaf.right{top:165px;left:123px;transform:rotate(80deg) scaleX(-1)}
+.bloom{
+  position:absolute;left:120px;top:100px;
+  width:0;height:0;transform:translate(-50%,-50%);
+  animation:appear 1s ease-out forwards;
+}
+.petal{
+  position:absolute;left:-35px;top:-58px;
+  width:70px;height:100px;
+  border-radius:50% 50% 43% 43%;
+  transform-origin:50% 90%;
+  background:linear-gradient(135deg,#ffb0d0 0%,#fa287b 40%,#a6003e 100%);
+  box-shadow:inset 4px 3px 9px #ffc0dd88,0 0 12px #ff267955;
+  animation:open 3s cubic-bezier(.2,.8,.2,1) both;
+}
+.petal.back{
+  background:linear-gradient(135deg,#ff9fc9,#dc075a 60%,#70002f);
+  height:110px;width:76px;left:-38px;top:-62px;
+}
+.petal.inner{
+  width:47px;height:68px;left:-23px;top:-38px;
+  background:linear-gradient(135deg,#ffb6d9,#f51b71 65%,#8c0038);
+}
+.center{
+  position:absolute;left:-15px;top:-18px;
+  width:30px;height:37px;border-radius:50%;
+  background:linear-gradient(120deg,#ffb4d6,#c5004e);
+  box-shadow:0 0 15px #ff5b9e;
+}
+@keyframes open{
+  0%{transform:rotate(var(--a)) scale(.08) translateY(20px)}
+  70%{transform:rotate(var(--a)) scale(1.08)}
+  100%{transform:rotate(var(--a)) scale(1)}
+}
+@keyframes appear{
+  from{filter:brightness(.2);transform:translate(-50%,-50%) scale(.1)}
+  to{filter:brightness(1);transform:translate(-50%,-50%) scale(1)}
+}
+@keyframes glow{
+  from{text-shadow:0 0 10px #ff237f}
+  to{text-shadow:0 0 25px #ff237f,0 0 45px #ff6ca9}
+}
+button{
+  border:1px solid #ff8fbd;border-radius:30px;
+  background:linear-gradient(135deg,#ff4f96,#bd0754);
+  color:white;padding:13px 24px;font-size:16px;
+  box-shadow:0 0 20px #ff267766;cursor:pointer;
+  margin:12px 5px;
+}
+button:active{transform:scale(.95)}
+#message{min-height:28px;color:#ffb5d4;font-size:16px}
+.spark{
+  position:fixed;pointer-events:none;color:#ffc2df;
+  animation:fall linear forwards;z-index:1;
+}
+@keyframes fall{
+  0%{transform:translateY(-10vh) rotate(0deg);opacity:0}
+  10%{opacity:1}
+  100%{transform:translateY(110vh) rotate(500deg);opacity:0}
+}
 </style>
 </head>
 <body>
-<main>
-<header><div class="symbol">☯️</div><h1>TỬ VI PHƯƠNG ĐÔNG</h1><p>Khám phá bản mệnh · Tình duyên · Công danh · Tài lộc</p></header>
-<div class="card">
-<h2>🔮 Nhập ngày tháng năm sinh</h2>
-<form id="form">
-<label for="birth">Ngày sinh</label>
-<input id="birth" type="date" required min="1900-01-01" max="2026-12-31">
-<label for="calendar">Loại ngày sinh</label>
-<select id="calendar"><option value="solar">Dương lịch</option><option value="lunar">Âm lịch</option></select>
-<label for="gender">Giới tính</label>
-<select id="gender"><option value="male">Nam</option><option value="female">Nữ</option><option value="other">Không muốn cung cấp</option></select>
-<button type="submit">✨ XEM TỬ VI CỦA TÔI</button>
-</form>
+<div class="scene">
+  <h1>🌹 Hoa Hồng Nở Rộ 🌹</h1>
+  <p>Một đóa hồng dành tặng bạn</p>
+
+  <div class="flower">
+    <div class="stem"></div>
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+    <div class="bloom" id="bloom"></div>
+  </div>
+
+  <div id="message">Chạm vào nút để hoa nở rực rỡ hơn nhé!</div>
+  <button onclick="bloomAgain()">🌹 Làm hoa nở rộ</button>
+  <button onclick="changeMessage()">💌 Lời nhắn</button>
 </div>
-<div id="result" hidden>
-<div class="card"><div class="hero"><div class="animal" id="animal"></div><h2 id="headline"></h2><p id="subhead"></p></div>
-<div class="grid">
-<div class="item"><small>Năm nhập</small><strong id="year"></strong></div>
-<div class="item"><small>Con giáp</small><strong id="zodiac"></strong></div>
-<div class="item"><small>Mệnh ngũ hành</small><strong id="element"></strong></div>
-<div class="item"><small>Can chi năm</small><strong id="canchi"></strong></div>
-</div></div>
-<div class="card"><h2>🌟 Luận giải tham khảo</h2><div id="reading"></div></div>
-<button type="button" id="print">🖨️ In / lưu PDF</button>
-</div>
-<div class="notice">Tử vi chỉ mang tính tham khảo, giải trí, không phải dự đoán khoa học.</div>
-<footer>© Tử Vi Phương Đông</footer>
-</main>
+
 <script>
-const animals=["Thân","Dậu","Tuất","Hợi","Tý","Sửu","Dần","Mão","Thìn","Tỵ","Ngọ","Mùi"];
-const names=["Khỉ","Gà","Chó","Lợn","Chuột","Trâu","Hổ","Mèo","Rồng","Rắn","Ngựa","Dê"];
-const icons=["🐒","🐓","🐕","🐖","🐀","🐂","🐅","🐈","🐉","🐍","🐎","🐐"];
-const stems=["Giáp","Ất","Bính","Đinh","Mậu","Kỷ","Canh","Tân","Nhâm","Quý"];
-const branches=["Tý","Sửu","Dần","Mão","Thìn","Tỵ","Ngọ","Mùi","Thân","Dậu","Tuất","Hợi"];
-const napAm=[
-["Hải Trung Kim","Kim"],["Lư Trung Hỏa","Hỏa"],["Đại Lâm Mộc","Mộc"],["Lộ Bàng Thổ","Thổ"],["Kiếm Phong Kim","Kim"],["Sơn Đầu Hỏa","Hỏa"],["Giản Hạ Thủy","Thủy"],["Thành Đầu Thổ","Thổ"],["Bạch Lạp Kim","Kim"],["Dương Liễu Mộc","Mộc"],["Tuyền Trung Thủy","Thủy"],["Ốc Thượng Thổ","Thổ"],["Tích Lịch Hỏa","Hỏa"],["Tùng Bách Mộc","Mộc"],["Trường Lưu Thủy","Thủy"],["Sa Trung Kim","Kim"],["Sơn Hạ Hỏa","Hỏa"],["Bình Địa Mộc","Mộc"],["Bích Thượng Thổ","Thổ"],["Kim Bạch Kim","Kim"],["Phú Đăng Hỏa","Hỏa"],["Thiên Hà Thủy","Thủy"],["Đại Dịch Thổ","Thổ"],["Thoa Xuyến Kim","Kim"],["Tang Đố Mộc","Mộc"],["Đại Khê Thủy","Thủy"],["Sa Trung Thổ","Thổ"],["Thiên Thượng Hỏa","Hỏa"],["Thạch Lựu Mộc","Mộc"],["Đại Hải Thủy","Thủy"]
+const bloom=document.getElementById('bloom');
+const colors=[
+ ['#ffb0d0','#fa287b','#a6003e'],
+ ['#ffd1e5','#ff477e','#b50043'],
+ ['#ffb2ad','#fa374d','#a90028']
 ];
-function canchi(y){return stems[((y-4)%10+10)%10]+" "+branches[((y-4)%12+12)%12]}
-function getElement(y){return napAm[Math.floor((((y-1984)%60+60)%60)/2)]}
-document.getElementById("form").addEventListener("submit",function(e){
-e.preventDefault();
-const raw=document.getElementById("birth").value;
-if(!raw)return;
-const [y,mm,dd]=raw.split("-").map(Number);
-const lunar=document.getElementById("calendar").value==="lunar";
-const yi=((y%12)+12)%12;
-const elem=getElement(y);
-document.getElementById("animal").textContent=icons[yi];
-document.getElementById("headline").textContent="Tuổi "+names[yi];
-document.getElementById("subhead").textContent="Ngày nhập: "+dd+"/"+mm+"/"+y+(lunar?" (ngày âm lịch)":" (dương lịch)");
-document.getElementById("year").textContent=y;
-document.getElementById("zodiac").textContent=names[yi];
-document.getElementById("element").textContent=elem[0];
-document.getElementById("canchi").textContent=canchi(y);
-const readings=[
-["Tính cách","Hãy phát huy điểm mạnh, chủ động học hỏi và cân bằng sự tự tin với khả năng lắng nghe."],
-["Công danh","Kiên trì nâng cao kỹ năng, giữ chữ tín và lập kế hoạch rõ ràng sẽ giúp xây dựng sự nghiệp bền vững."],
-["Tài lộc","Theo dõi thu chi, tích lũy đều đặn và tìm hiểu kỹ trước các quyết định tài chính."],
-["Tình duyên","Giao tiếp chân thành, tôn trọng nhau và cùng giải quyết bất đồng là nền tảng của mối quan hệ tốt đẹp."],
-["Vận trình 2026","Nên rà soát mục tiêu, chăm sóc sức khỏe và chủ động nắm bắt cơ hội. Đây là lời khuyên tổng quát, không phải dự đoán vận hạn cá nhân."]
+let flowerColor=0;
+
+function makeFlower(){
+  bloom.innerHTML='';
+  const c=colors[flowerColor];
+  for(let i=0;i<12;i++){
+    const p=document.createElement('div');
+    p.className='petal back';
+    p.style.setProperty('--a',(i*30)+'deg');
+    p.style.transform=`rotate(${i*30}deg)`;
+    p.style.background=`linear-gradient(135deg,${c[0]},${c[1]} 55%,${c[2]})`;
+    p.style.animationDelay=(i*.06)+'s';
+    bloom.appendChild(p);
+  }
+  for(let i=0;i<9;i++){
+    const p=document.createElement('div');
+    p.className='petal';
+    p.style.setProperty('--a',(i*40)+'deg');
+    p.style.transform=`rotate(${i*40}deg)`;
+    p.style.animationDelay=(.3+i*.07)+'s';
+    bloom.appendChild(p);
+  }
+  for(let i=0;i<6;i++){
+    const p=document.createElement('div');
+    p.className='petal inner';
+    p.style.setProperty('--a',(i*60)+'deg');
+    p.style.transform=`rotate(${i*60}deg)`;
+    p.style.animationDelay=(.7+i*.08)+'s';
+    bloom.appendChild(p);
+  }
+  const center=document.createElement('div');
+  center.className='center';
+  bloom.appendChild(center);
+}
+function bloomAgain(){
+  flowerColor=(flowerColor+1)%colors.length;
+  makeFlower();
+  document.getElementById('message').textContent='Hoa đã nở rực rỡ! 🌹';
+  for(let i=0;i<25;i++)setTimeout(makeSpark,i*45);
+}
+const messages=[
+  'Chúc bạn luôn xinh đẹp và hạnh phúc ❤️',
+  'Mong mỗi ngày của bạn đều rực rỡ như hoa 🌹',
+  'Gửi bạn một đóa hồng cùng thật nhiều yêu thương 💗',
+  'Hãy luôn nở rộ theo cách riêng của mình ✨'
 ];
-document.getElementById("reading").replaceChildren(...readings.map(([title,body])=>{const div=document.createElement("div");div.className="section";const strong=document.createElement("strong");strong.textContent=title;div.append(strong,document.createElement("br"),document.createTextNode(body));return div}));
-document.getElementById("result").hidden=false;
-document.getElementById("result").scrollIntoView({behavior:"smooth"});
-});
-document.getElementById("print").addEventListener("click",()=>window.print());
+let mi=0;
+function changeMessage(){
+  document.getElementById('message').textContent=messages[mi%messages.length];
+  mi++;
+}
+function makeSpark(){
+  const s=document.createElement('div');
+  s.className='spark';
+  s.textContent=['🌸','💗','✨','🌹'][Math.floor(Math.random()*4)];
+  s.style.left=Math.random()*100+'vw';
+  s.style.top='-5vh';
+  s.style.fontSize=(12+Math.random()*20)+'px';
+  s.style.animationDuration=(4+Math.random()*5)+'s';
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),9000);
+}
+makeFlower();
+setInterval(()=>{if(Math.random()>.4)makeSpark()},600);
 </script>
 </body>
 </html>
